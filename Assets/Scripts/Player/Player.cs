@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     public void IncreaseHealth(int amount)
     {
-        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, _maxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _maxHealth);
     }
 
     public void DecreaseHealth(int amount)
