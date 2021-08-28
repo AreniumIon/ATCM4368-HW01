@@ -30,7 +30,7 @@ public abstract class CollectibleBase : MonoBehaviour
     {
         // Rotation
         Quaternion turnOffset = Quaternion.Euler(0, _movementSpeed, 0);
-        rb.MoveRotation(_rb.rotation * turnOffset);
+        rb.MoveRotation(rb.rotation * turnOffset);
     }
 
     private void OnTriggerEnter(Collider other)
