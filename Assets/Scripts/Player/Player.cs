@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
 
+    public List<MeshRenderer> meshRenderers;
+
     [SerializeField] int _maxHealth = 3;
     int _currentHealth;
     public int CurrentHealth

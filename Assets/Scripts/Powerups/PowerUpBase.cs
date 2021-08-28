@@ -46,11 +46,11 @@ public abstract class PowerUpBase : MonoBehaviour
             Feedback();
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
-            WaitAndPowerDown(_powerupDuration, player);
+            StartCoroutine(WaitAndPowerDown(PowerupDuration, player));
         }
     }
 
-    private IEnumerator WaitAndPowerDown(float time, Player player)
+    protected IEnumerator WaitAndPowerDown(float time, Player player)
     {
         yield return new WaitForSeconds(time);
         PowerDown(player);

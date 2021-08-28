@@ -320,6 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7deae910b21a2142adfc1132501442e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  meshRenderers:
+  - {fileID: 7720170145884713143}
+  - {fileID: 7720170146591282823}
+  - {fileID: 7720170145659977762}
+  - {fileID: 7720170145939735731}
   _maxHealth: 3
 --- !u!114 &7720170146034085690
 MonoBehaviour:

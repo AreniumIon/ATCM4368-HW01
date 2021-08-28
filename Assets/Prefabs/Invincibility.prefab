@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 1
-  _powerupDuration: 1
+  _powerupDuration: 5
   _powerupParticles: {fileID: 0}
   _powerupSound: {fileID: 0}
+  invincibilityMaterial: {fileID: 2100000, guid: 316ca6df56583844f89aa157f8eb6407, type: 2}

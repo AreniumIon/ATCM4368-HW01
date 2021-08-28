@@ -129,4 +129,4 @@ MonoBehaviour:
   _impactParticles: {fileID: 0}
   _impactSound: {fileID: 0}
   _slowAmount: 0.1
-  _slowTime: 4
+  _slowTime: 3
