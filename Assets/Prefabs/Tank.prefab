@@ -254,8 +254,9 @@ GameObject:
   - component: {fileID: 7720170146034085692}
   - component: {fileID: 7720170146034085695}
   - component: {fileID: 7720170146034085693}
-  - component: {fileID: 7720170146034085690}
   - component: {fileID: 7720170146034085691}
+  - component: {fileID: 7720170146034085690}
+  - component: {fileID: 4214213808313726345}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -307,6 +308,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7720170146034085691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720170146034085694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7deae910b21a2142adfc1132501442e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
 --- !u!114 &7720170146034085690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 0.15
   _turnSpeed: 2
---- !u!114 &7720170146034085691
+--- !u!114 &4214213808313726345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,10 +344,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7720170146034085694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7deae910b21a2142adfc1132501442e, type: 3}
+  m_Script: {fileID: 11500000, guid: f1778f44d8348bf4a96710ce67833a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
+  treasureText: {fileID: 0}
+  _startingTreasure: 0
 --- !u!1 &7720170146591282825
 GameObject:
   m_ObjectHideFlags: 0

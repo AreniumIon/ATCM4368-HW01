@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TankController))]
+[RequireComponent(typeof(TankController), typeof(Inventory))]
 public class Player : MonoBehaviour
 {
     [SerializeField] int _maxHealth = 3;
     int _currentHealth;
 
     TankController _tankController;
+    Inventory _inventory;
 
     private void Awake()
     {
         _tankController = GetComponent<TankController>();
+        _inventory = GetComponent<Inventory>();
     }
 
     private void Start()
