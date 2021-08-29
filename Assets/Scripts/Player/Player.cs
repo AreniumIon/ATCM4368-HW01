@@ -49,7 +49,8 @@ public class Player : MonoBehaviour
         CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _maxHealth);
     }
 
-    public void DecreaseHealth(int amount)
+    // Return true if took damage, false if invincible
+    public bool DecreaseHealth(int amount)
     {
         if (CanTakeDamage)
         {
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
             if (_currentHealth <= 0)
                 Kill();
         }
+        return !CanTakeDamage;
     }
 
     public void Kill()

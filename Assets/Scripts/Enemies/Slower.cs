@@ -7,7 +7,7 @@ public class Slower : Enemy
     [SerializeField] float _slowAmount;
     [SerializeField] float _slowTime;
 
-    protected override void PlayerImpact(Player player)
+    protected override bool PlayerImpact(Player player)
     {
         TankController controller = player.GetComponent<TankController>();
         if (controller != null)
@@ -15,6 +15,7 @@ public class Slower : Enemy
             controller.MoveSpeed -= _slowAmount;
             controller.StartCoroutine(RestoreSpeed(_slowTime, _slowAmount, controller));
         }
+        return true;
     }
 
     static IEnumerator RestoreSpeed(float time, float slowAmount, TankController controller)

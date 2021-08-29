@@ -21,25 +21,26 @@ public class Enemy : MonoBehaviour
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            PlayerImpact(player);
-            ImpactFeedback();
+            bool success = PlayerImpact(player);
+            ImpactFeedback(success);
         }
     }
 
-    protected virtual void PlayerImpact(Player player)
+    // Return true if successful. Used for feedback
+    protected virtual bool PlayerImpact(Player player)
     {
-        player.DecreaseHealth(_damageAmount);
+        return player.DecreaseHealth(_damageAmount);
     }
 
-    private void ImpactFeedback()
+    private void ImpactFeedback(bool success)
     {
         // Particles
-        if (_impactParticles != null)
+        if (_impactParticles != null && success)
         {
             _impactParticles = Instantiate(_impactParticles, transform.position, Quaternion.identity);
         }
         // Audio
-        if (_impactSound != null)
+        if (_impactSound != null && success)
         {
             AudioHelper.PlayClip2D(_impactSound, 1f);
         }
