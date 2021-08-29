@@ -7,6 +7,8 @@ public class Slower : Enemy
     [SerializeField] float _slowAmount;
     [SerializeField] float _slowTime;
 
+    [SerializeField] AudioClip _restoreSpeedSound;
+
     protected override bool PlayerImpact(Player player)
     {
         TankController controller = player.GetComponent<TankController>();
@@ -18,9 +20,19 @@ public class Slower : Enemy
         return true;
     }
 
-    static IEnumerator RestoreSpeed(float time, float slowAmount, TankController controller)
+    public IEnumerator RestoreSpeed(float time, float slowAmount, TankController controller)
     {
         yield return new WaitForSeconds(time);
         controller.MoveSpeed += slowAmount;
+        RestoreSpeedFeedback();
+    }
+
+    public void RestoreSpeedFeedback()
+    {
+        // Audio
+        if (_restoreSpeedSound != null)
+        {
+            AudioHelper.PlayClip2D(_restoreSpeedSound, 1f);
+        }
     }
 }

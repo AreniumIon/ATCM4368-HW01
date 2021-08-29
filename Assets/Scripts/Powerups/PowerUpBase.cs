@@ -17,6 +17,7 @@ public abstract class PowerUpBase : MonoBehaviour
 
     [SerializeField] ParticleSystem _powerupParticles;
     [SerializeField] AudioClip _powerupSound;
+    [SerializeField] AudioClip _powerdownSound;
 
     Rigidbody _rb;
 
@@ -43,7 +44,7 @@ public abstract class PowerUpBase : MonoBehaviour
         if (player != null)
         {
             PowerUp(player);
-            Feedback();
+            PowerUpFeedback();
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
             StartCoroutine(WaitAndPowerDown(PowerupDuration, player));
@@ -54,10 +55,11 @@ public abstract class PowerUpBase : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         PowerDown(player);
+        PowerDownFeedback();
         gameObject.SetActive(false);
     }    
 
-    private void Feedback()
+    private void PowerUpFeedback()
     {
         // Particles
         if (_powerupParticles != null)
@@ -68,6 +70,15 @@ public abstract class PowerUpBase : MonoBehaviour
         if (_powerupSound != null)
         {
             AudioHelper.PlayClip2D(_powerupSound, 1f);
+        }
+    }
+
+    private void PowerDownFeedback()
+    {
+        // Audio
+        if (_powerdownSound != null)
+        {
+            AudioHelper.PlayClip2D(_powerdownSound, 1f);
         }
     }
 }

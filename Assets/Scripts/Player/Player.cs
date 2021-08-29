@@ -57,8 +57,9 @@ public class Player : MonoBehaviour
             CurrentHealth -= amount;
             if (_currentHealth <= 0)
                 Kill();
+            return true;
         }
-        return !CanTakeDamage;
+        return false;
     }
 
     public void Kill()

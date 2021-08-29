@@ -128,5 +128,6 @@ MonoBehaviour:
   _movementSpeed: 1
   _powerupDuration: 5
   _powerupParticles: {fileID: 0}
-  _powerupSound: {fileID: 0}
+  _powerupSound: {fileID: 8300000, guid: 4f7be0b35aa15db49ac98fcb40c8b1b1, type: 3}
+  _powerdownSound: {fileID: 8300000, guid: 3f668dc867e80bc438219c6886cc041c, type: 3}
   invincibilityMaterial: {fileID: 2100000, guid: 316ca6df56583844f89aa157f8eb6407, type: 2}

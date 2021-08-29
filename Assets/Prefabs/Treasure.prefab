@@ -127,5 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 1
   _collectParticles: {fileID: 0}
-  _collectSound: {fileID: 0}
+  _collectSound: {fileID: 8300000, guid: 18b231abd2583994f99cb50fbd9ab03a, type: 3}
   treasureCount: 1
