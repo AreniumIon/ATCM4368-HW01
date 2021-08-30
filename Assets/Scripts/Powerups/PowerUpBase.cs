@@ -64,7 +64,7 @@ public abstract class PowerUpBase : MonoBehaviour
         // Particles
         if (_powerupParticles != null)
         {
-            _powerupParticles = Instantiate(_powerupParticles, transform.position, Quaternion.identity);
+            _powerupParticles.Play();
         }
         // Audio
         if (_powerupSound != null)

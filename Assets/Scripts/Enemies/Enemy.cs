@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         // Particles
         if (_impactParticles != null && success)
         {
-            _impactParticles = Instantiate(_impactParticles, transform.position, Quaternion.identity);
+            _impactParticles.Play();
         }
         // Audio
         if (_impactSound != null && success)

@@ -49,7 +49,10 @@ public abstract class CollectibleBase : MonoBehaviour
         // Particles
         if (_collectParticles != null)
         {
+            // Instantiate particle system b/c collectible will be destroyed
             _collectParticles = Instantiate(_collectParticles, transform.position, Quaternion.identity);
+            _collectParticles.transform.localScale = new Vector3(1, 1, 1);
+            _collectParticles.Play();
         }
         // Audio
         if (_collectSound != null)
